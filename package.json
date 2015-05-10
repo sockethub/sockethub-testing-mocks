@@ -1,0 +1,18 @@
+{
+  "name": "sockethub-testing-mocks",
+  "version": "1.0.0",
+  "description": "mocks for sockethub testing",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sockethub/sockethub-testing-mocks.git"
+  },
+  "author": "Nick Jennings <nick@silverbucket.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sockethub/sockethub-testing-mocks/issues"
+  },
+  "homepage": "https://github.com/sockethub/sockethub-testing-mocks"
+}

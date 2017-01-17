@@ -25,6 +25,6 @@ module.exports = function (test) {
     }
   };
 
-  session.client = require('./mock-connection-manager')(test, session);
+  session.connectionManager = require('./mock-connection-manager')(test, session);
   return session;
 };

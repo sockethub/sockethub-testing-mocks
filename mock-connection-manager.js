@@ -5,21 +5,21 @@ module.exports = function (test, session) {
 
     }),
     move: new test.Stub(function(oldID, oldCreds, newID, newCreds) {
-      test.write('session.client.move: renaming ' + oldID + ' to ' + newID);
+      test.write('session.connectionManager.move: renaming ' + oldID + ' to ' + newID);
       var client = clients[oldID];
       clients[newID] = client;
       delete clients[oldID];
     }),
     get: new test.Stub(function (id, createObj, cb) {
-      test.write('session.client.get(' + id + ', ' + typeof createObj + ', ' + typeof cb + ')');
+      test.write('session.connectionManager.get(' + id + ', ' + typeof createObj + ', ' + typeof cb + ')');
 
       session.store.get(id, function (credentials) {
-        test.write('session.client.get: got credentials for ' + id);
+        test.write('session.connectionManager.get: got credentials for ' + id);
         if (clients[id]) {
-          test.write('session.client.get: returning existing client');
+          test.write('session.connectionManager.get: returning existing client');
           cb(null, clients[id]);
         } else {
-          test.write('session.client.get: creating new client');
+          test.write('session.connectionManager.get: creating new client');
           createObj.connect.apply({
             credentials: credentials,
             scope: session

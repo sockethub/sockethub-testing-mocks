@@ -1,10 +1,22 @@
 module.exports = function (test) {
   var store = {};
 
+  var handlers = {
+    send: function () {}
+  }
+  function callOnNext(action, cb) {
+    handlers[action] = cb;
+  }
+  function triggerNext(action, params) {
+    handlers[action].apply(undefined, params);
+  }
+
   var session = {
     id: 'testing',
-    send: new test.Stub(function () {
-
+    callOnNext: callOnNext,
+    send: new test.Stub(function (data) {
+      console.log('SEND CALLED : ', data);
+      triggerNext('send', [ data ]);
     }),
     debug: function (msg, obj) {
       if (typeof obj !== 'undefined') {

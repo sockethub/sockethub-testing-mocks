@@ -1,6 +1,6 @@
 {
   "name": "sockethub-testing-mocks",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "mocks for sockethub testing",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -15,7 +15,7 @@ module.exports = function (test) {
     id: 'testing',
     callOnNext: callOnNext,
     send: new test.Stub(function (data) {
-      console.log('SEND CALLED : ', data);
+      // console.log('SEND CALLED : ', data);
       triggerNext('send', [ data ]);
     }),
     debug: function (msg, obj) {
